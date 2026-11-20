@@ -1,0 +1,55 @@
+# ============================================================
+# FoodLens  .gitignore
+# 说明：只提交 代码 / 配置 / 清单 / 报告 / 文档 / 两个 hand-off best.pt(Git LFS)
+#       其余原始数据、日志、中间产物、last.pt 等一概不入库。
+# ============================================================
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.env
+.ipynb_checkpoints/
+
+# ---------- 编辑器 / 系统 ----------
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- 数据：原图与归档一律不入库 ----------
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# ---------- 模型权重：一律不入库 ----------
+# 如需分享权重，请用 GitHub Release 附件 / 网盘 / HuggingFace（不要直接进仓库）
+checkpoints/**/*.pt
+checkpoints/**/*.pth
+checkpoints/**/*.ckpt
+checkpoints/**/*.bin
+checkpoints/**/*.safetensors
+*.gbk.bak
+*.bak
+
+# ---------- 运行产物 / 日志 ----------
+outputs/
+logs/
+runs/
+wandb/
+*.log
+
+# ---------- 压缩包 ----------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+任务要求.txt
+目录结构.txt

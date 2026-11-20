@@ -1,0 +1,29 @@
+# Frozen task-1 evaluation protocol (v1).
+# All task-1 numbers (baselines, beam search, SCST hand-off) must be produced
+# by src/common/metrics.py with these settings.  Changing a value here changes
+# the protocol: record the change in docs/runbook_task1.md and bump the version.
+protocol_version: task1-eval-v1
+
+tokenizer: regex-lower-alnum-v1
+
+metrics:
+  bleu:
+    max_order: 4
+    # COCO epsilon smoothing is built into the implementation.
+    scale: 100.0
+  rouge_l:
+    # pycocoevalcap uses beta=1.2 and independent max P / max R.
+    beta: 1.2
+    scale: 100.0
+  cider_d:
+    max_order: 4
+    sigma: 6.0
+    # 0 = no count clipping (official COCO scorer). Set 10 for the CIDEr-D
+    # paper's clipped variant; document whichever value you report.
+    clip: 0
+    # Official COCO scale is x10.  Set 100 if you prefer a 0-100 table.
+    scale: 10.0
+
+references:
+  # Prediction CSV stores multiple references in one field separated by this.
+  multi_ref_sep: " ||| "

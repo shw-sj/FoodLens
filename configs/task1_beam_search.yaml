@@ -1,0 +1,21 @@
+# Beam-width and length-penalty sweep for the ViT checkpoint.
+# Tune on validation, then run the selected setting once on test.
+#
+#   python -m src.task1_caption.beam_search --config configs/task1_beam_search.yaml
+#   python -m src.task1_caption.beam_search --config configs/task1_beam_search.yaml \
+#       --final-split test
+#
+# The sweep uses CIDEr-D (BLEU-4 as tie-break) to select a setting.  The
+# official test split is never used for selection.
+
+checkpoint: checkpoints/task1/vit_transformer/best.pt
+split: val
+max_len: 40
+beam_sizes: [3, 5, 7]
+length_penalties: [0.6, 0.8, 1.0, 1.2, 1.4]
+min_len: 0
+limit: 500              # cap validation images during tuning; set null/null for all
+batch_size: 32
+num_workers: 8
+output_dir: outputs/task1/beam_search
+protocol: configs/eval_protocol.yaml

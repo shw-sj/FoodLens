@@ -1,0 +1,3 @@
+model,path,sha256,val_bleu4,val_rouge_l,val_cider_d,owner,date,notes
+resnet18_gru,checkpoints/task1/resnet18_gru/best.pt,a920d213235c114d24791d3b8390e97e9125d62fa2b079e2b220cf5c3d2fed7a,5.02,26.67,0.3508,单文杰,2026-11-20,task1 baseline (best epoch 30)
+vit_transformer,checkpoints/task1/vit_transformer/best.pt,fe3ba76a61d828701d424d3525e836448b15c6e02c3c52b08ce9be21ff481318,5.69,27.46,0.4867,单文杰,2026-11-20,task1 selected by val CIDEr-D (best epoch 15)

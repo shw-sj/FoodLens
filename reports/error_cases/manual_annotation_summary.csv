@@ -1,0 +1,6 @@
+﻿type,category_en,category_cn,count,pct
+manual,ingredient_misidentification,食材误识别,43,71.7
+manual,cooking_method_error,烹饪方式错误,3,5.0
+manual,missing_ingredient,食材漏述,8,13.3
+manual,unsupported_addition,无依据添加,6,10.0
+agreement,,,24/60,40.0

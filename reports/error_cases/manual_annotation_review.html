@@ -1,0 +1,560 @@
+<!DOCTYPE html><html lang='zh'><head><meta charset='utf-8'>
+<title>任务一 描述错误 人工标注审阅表</title>
+<style>
+body{font-family:'Microsoft YaHei',Arial,sans-serif;margin:24px;background:#f4f5f7;color:#222;}
+h1{font-size:20px;} .intro{background:#fff;border-left:4px solid #4a7;padding:12px 16px;border-radius:6px;margin-bottom:18px;line-height:1.7;}
+.case{display:flex;gap:16px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:12px;margin-bottom:14px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+.img img{width:300px;height:auto;border-radius:8px;display:block;}
+.txt{flex:1;font-size:14px;line-height:1.65;}
+.badge{display:inline-block;background:#e8f0ff;color:#245;padding:2px 9px;border-radius:11px;font-size:12px;margin-left:6px;}
+.ref{color:#333;} .rn{color:#b03;} .vt{color:#227;} .sug{color:#078;font-weight:bold;margin-top:6px;}
+code{background:#f0f2f4;padding:1px 5px;border-radius:3px;font-size:12px;}
+</style></head><body>
+<h1>任务一 描述错误 人工标注审阅表（60 例，每类 15 例）</h1>
+<div class='intro'>
+<b>怎么用：</b>对照左侧原图与参考描述，判断该图<b>最主要的描述错误类别</b>：
+食材误识别 / 烹饪方式错误 / 食材漏述 / 无依据添加。<br>
+把判断结果填入 <code>manual_annotation_sheet.csv</code> 的 <code>manual_category</code> 列，
+理由填 <code>notes</code>（若同意自动建议，写 <code>agree</code> 即可）。
+</div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000170.jpg' alt='images/test/unlabeled/000170.jpg'></div>
+<div class='txt'>
+<div><b>#01</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000170.jpg</code></div>
+<p class='ref'><b>参考：</b>Baked apple strudel with almond slices on the surface on a white plate.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a piece of pumpkin cake with a super brown crust and a piece of brown bread on a white plate</p>
+<p class='vt'><b>ViT+Transformer：</b>a large piece of apple strudel with thin yellow apple pieces and white sugar</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000307.jpg' alt='images/test/unlabeled/000307.jpg'></div>
+<div class='txt'>
+<div><b>#02</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000307.jpg</code></div>
+<p class='ref'><b>参考：</b>Some bone-in grilled Ayam goreng seasoned with various fresh spices.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of ayam goreng with a crispy skin served with a small piece of beer</p>
+<p class='vt'><b>ViT+Transformer：</b>three pieces of ayam goreng on a white plate</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000008.jpg' alt='images/test/unlabeled/000008.jpg'></div>
+<div class='txt'>
+<div><b>#03</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000008.jpg</code></div>
+<p class='ref'><b>参考：</b>A large slice of oily grilled AEbleflaesk in combination with mashed apples</p>
+<p class='rn'><b>ResNet18+GRU：</b>a large plate of aebleflaesk with a lot of pork belly and pork in a brown sauce</p>
+<p class='vt'><b>ViT+Transformer：</b>a thick piece of aebleflaesk with crispy apple pieces and apple pieces and apple pieces</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000020.jpg' alt='images/test/unlabeled/000020.jpg'></div>
+<div class='txt'>
+<div><b>#04</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000020.jpg</code></div>
+<p class='ref'><b>参考：</b>Three pieces of yellow fried thin aburaage stored in a plastic bag.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a large piece of golden brown aburaage with a super brown surface and a piece of white paper</p>
+<p class='vt'><b>ViT+Transformer：</b>a piece of apple pie with a crispy crust and a filling of apples as fillings</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000206.jpg' alt='images/test/unlabeled/000206.jpg'></div>
+<div class='txt'>
+<div><b>#05</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000206.jpg</code></div>
+<p class='ref'><b>参考：</b>Three deep fried arancini with ketchup on top and beneath on a long white plate</p>
+<p class='rn'><b>ResNet18+GRU：</b>crab crab in a red sauce and a small bowl of ketchup on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a white plate of chicken cacciatore with crispy skin and juicy chicken in thick sauce</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000084.jpg' alt='images/test/unlabeled/000084.jpg'></div>
+<div class='txt'>
+<div><b>#06</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000084.jpg</code></div>
+<p class='ref'><b>参考：</b>Two whole slices of boiled saltwater anago on top of the sushi rice</p>
+<p class='rn'><b>ResNet18+GRU：</b>two pieces of brown bread with a small piece of white sauce on the surface on a white plate</p>
+<p class='vt'><b>ViT+Transformer：</b>two anago rolls with oily brown surface and a thin slice of ginger on the side and an oily and</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000230.jpg' alt='images/test/unlabeled/000230.jpg'></div>
+<div class='txt'>
+<div><b>#07</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000230.jpg</code></div>
+<p class='ref'><b>参考：</b>baked avocado bread with fresh avocado slices on top accompanied with green asparagus</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of green peas with green beans and green peppers on a white plate</p>
+<p class='vt'><b>ViT+Transformer：</b>a white plate of three pieces of bread covered with green and green sauce and the other</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000236.jpg' alt='images/test/unlabeled/000236.jpg'></div>
+<div class='txt'>
+<div><b>#08</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000236.jpg</code></div>
+<p class='ref'><b>参考：</b>Two slices of avocado bread made with toasted whole wheat bread and creamy avocado spread.</p>
+<p class='rn'><b>ResNet18+GRU：</b>two pieces of bread bread with a crispy surface and a few slices of bread on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>two slices of toast with mashed avocado on top and a silver fork next to it</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000282.jpg' alt='images/test/unlabeled/000282.jpg'></div>
+<div class='txt'>
+<div><b>#09</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000282.jpg</code></div>
+<p class='ref'><b>参考：</b>grilled ayam bakar with cucumber slices, cabbage and red chili sauce</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of fried pork slices with lettuce leaves and lettuce leaves</p>
+<p class='vt'><b>ViT+Transformer：</b>a top view of ayam goreng with a dish of sauce and a piece of cucumber and a small bowl of white sauce</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000347.jpg' alt='images/test/unlabeled/000347.jpg'></div>
+<div class='txt'>
+<div><b>#10</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000347.jpg</code></div>
+<p class='ref'><b>参考：</b>A nice toasted bacon baguette sandwich, seasoned with some ketchup.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a sandwich with some bacon slices and bacon in the middle</p>
+<p class='vt'><b>ViT+Transformer：</b>a sandwich with two slices of toast and a red tomato inside and yellow mustard</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000430.jpg' alt='images/test/unlabeled/000430.jpg'></div>
+<div class='txt'>
+<div><b>#11</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000430.jpg</code></div>
+<p class='ref'><b>参考：</b>lightly baked bangers with sliced onions on the top of mashed potatoes.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of pork knuckle with a brown sauce and a piece of pork on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of bangers and mash with some onion sauce and some mashed potatoes on the top and some mashed potatoes on the bottom</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000443.jpg' alt='images/test/unlabeled/000443.jpg'></div>
+<div class='txt'>
+<div><b>#12</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000443.jpg</code></div>
+<p class='ref'><b>参考：</b>steamed banh bo with spongy skin tined into green and purple.</p>
+<p class='rn'><b>ResNet18+GRU：</b>many white banh bos are placed on a white plate</p>
+<p class='vt'><b>ViT+Transformer：</b>a pile of freshly baked banh bo cakes in the middle and grated coconut</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000490.jpg' alt='images/test/unlabeled/000490.jpg'></div>
+<div class='txt'>
+<div><b>#13</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000490.jpg</code></div>
+<p class='ref'><b>参考：</b>a whole roasted beef with cracks on the surface coated with a pasty served on a plate.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a piece of beef pie with a thick and crispy skin on the surface and a piece of bread</p>
+<p class='vt'><b>ViT+Transformer：</b>a piece of brown applesauce cake with black raisins and cinnamon inside and a piece of chocolate on the top in a plate</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000025.jpg' alt='images/test/unlabeled/000025.jpg'></div>
+<div class='txt'>
+<div><b>#14</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000025.jpg</code></div>
+<p class='ref'><b>参考：</b>A white square plate full of deep-fried aburaage strips with brown surface and a pocket in the middle</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of golden brown aburaage with a super crunchy texture</p>
+<p class='vt'><b>ViT+Transformer：</b>two pieces of and thin slices of white bread with a brown and soft texture</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000217.jpg' alt='images/test/unlabeled/000217.jpg'></div>
+<div class='txt'>
+<div><b>#15</b><span class='badge'>食材误识别 (ingredient_misidentification)</span> <code>images/test/unlabeled/000217.jpg</code></div>
+<p class='ref'><b>参考：</b>A large pan of Arros negre with grilled shrimps and other seafood.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a black plate of arros negre with a lot of black pepper and black pepper on the top</p>
+<p class='vt'><b>ViT+Transformer：</b>a large plate of arros negre with squid rings prawns and parsley on it strips and a next to it</p>
+<p class='sug'>建议类别：食材误识别 (ingredient_misidentification)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000053.jpg' alt='images/test/unlabeled/000053.jpg'></div>
+<div class='txt'>
+<div><b>#16</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000053.jpg</code></div>
+<p class='ref'><b>参考：</b>Big thin round almond biscuits baked brown and stacked on a square white plate.</p>
+<p class='rn'><b>ResNet18+GRU：</b>some golden corn dogs stacked together on a white plate</p>
+<p class='vt'><b>ViT+Transformer：</b>a stack of golden brown fried corn tortillas stacked together</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000032.jpg' alt='images/test/unlabeled/000032.jpg'></div>
+<div class='txt'>
+<div><b>#17</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000032.jpg</code></div>
+<p class='ref'><b>参考：</b>Pan-fried agedashi tofu with a light brown surface topped with some chopped green onions in soy sauce.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of juicy agedashi tofu with chopped spring onion and sprinkled with chopped spring onions</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of svickova consists of some braised pork belly slices and topped with some fried potato wedges and finely chopped green onions slices</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000212.jpg' alt='images/test/unlabeled/000212.jpg'></div>
+<div class='txt'>
+<div><b>#18</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000212.jpg</code></div>
+<p class='ref'><b>参考：</b>a pan of arros negre covered with scallops, boiled chopped squids and squid rings</p>
+<p class='rn'><b>ResNet18+GRU：</b>a black plate of arros negre with some black pepper and black pepper on the surface</p>
+<p class='vt'><b>ViT+Transformer：</b>an iron plate of black arros negre with red prawns squid rings and some fried tofu slices</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000281.jpg' alt='images/test/unlabeled/000281.jpg'></div>
+<div class='txt'>
+<div><b>#19</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000281.jpg</code></div>
+<p class='ref'><b>参考：</b>well baked ayam bakar with caramelized skin served with rice and lettuce</p>
+<p class='rn'><b>ResNet18+GRU：</b>a large piece of pork knuckle with a brown sauce and a few slices of lemon on the side and a piece of</p>
+<p class='vt'><b>ViT+Transformer：</b>a piece of grilled ayam bakar with grilled chicken a piece of cucumber and sour cream accompanied with cucumber slices and lettuce leaves and tomato slices slices</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000291.jpg' alt='images/test/unlabeled/000291.jpg'></div>
+<div class='txt'>
+<div><b>#20</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000291.jpg</code></div>
+<p class='ref'><b>参考：</b>well roasted ayam betutu served with rice, cucumber slices and red sauce on a rattan plate</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of nasi goreng with a super crispy skin and a small piece of red sauce on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of ayam goreng with a dish of sauce some steamed white rice and red chili oil slices and some chopped green onion</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000297.jpg' alt='images/test/unlabeled/000297.jpg'></div>
+<div class='txt'>
+<div><b>#21</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000297.jpg</code></div>
+<p class='ref'><b>参考：</b>Ayam betutu served with bean sprouts and seasoned white rice.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of nasi goreng with rice fried eggs and green onions</p>
+<p class='vt'><b>ViT+Transformer：</b>a large chunk of grilled ayam betutu accompanied with vegetable leaves a tomato wedge and cucumber slices on the side and a leaves</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000024.jpg' alt='images/test/unlabeled/000024.jpg'></div>
+<div class='txt'>
+<div><b>#22</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000024.jpg</code></div>
+<p class='ref'><b>参考：</b>Several pieces of boiled square aburaage with wrinkled surfaces placed in the brown sauce.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a large bowl of dark brown apple sauce with a lot of cinnamon</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of freshly baked apple cobbler food with a apple on top on a transparent plate</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000047.jpg' alt='images/test/unlabeled/000047.jpg'></div>
+<div class='txt'>
+<div><b>#23</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000047.jpg</code></div>
+<p class='ref'><b>参考：</b>A full bowl of creamy aligot together with a square plate of grilled sausages and a glass of red wine</p>
+<p class='rn'><b>ResNet18+GRU：</b>a small plate of brown bread with a layer of cream on the surface and a small piece of bread on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of freshly baked banana slices next to a plate of banana slices and a glass of drink slices</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000099.jpg' alt='images/test/unlabeled/000099.jpg'></div>
+<div class='txt'>
+<div><b>#24</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000099.jpg</code></div>
+<p class='ref'><b>参考：</b>Braised chicken and onions and dry red pepper in casserole with scallions on top</p>
+<p class='rn'><b>ResNet18+GRU：</b>in the white bowl is a pot of chicken knuckles and ginger stew with green onions and ginger</p>
+<p class='vt'><b>ViT+Transformer：</b>a pot of pot roast with lots of onions potatoes and scallions and a stainless steel spoon on it and a bottle of wine beside it</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000215.jpg' alt='images/test/unlabeled/000215.jpg'></div>
+<div class='txt'>
+<div><b>#25</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000215.jpg</code></div>
+<p class='ref'><b>参考：</b>Arros negre topped with grilled shrimps, sour cream, and lemon wedges.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a black plate of black stinky tofu with black pepper and black pepper on top</p>
+<p class='vt'><b>ViT+Transformer：</b>a large bowl of black arros negre with three roasted prawns on top slices and a lemon wedge aside</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000329.jpg' alt='images/test/unlabeled/000329.jpg'></div>
+<div class='txt'>
+<div><b>#26</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000329.jpg</code></div>
+<p class='ref'><b>参考：</b>scrambled eggs and long slices of grilled bacon served with pan-fried sausages</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of fried chicken with a crispy texture served with a fork on the side and a plate of sauce and a fork and a fork</p>
+<p class='vt'><b>ViT+Transformer：</b>two pieces of grilled bacon in combination with fried potato and mashed potatoes served with a fork and parsley</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000332.jpg' alt='images/test/unlabeled/000332.jpg'></div>
+<div class='txt'>
+<div><b>#27</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000332.jpg</code></div>
+<p class='ref'><b>参考：</b>two sunny-side-up fried eggs and four bacon slices accompanied with chopped peppers and onions</p>
+<p class='rn'><b>ResNet18+GRU：</b>a bowl of rice with yellow rice and yellow rice served with a spoon on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>the red bowl contains some white grits with some bacon and two slices of boiled eggs next to it slices</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000004.jpg' alt='images/test/unlabeled/000004.jpg'></div>
+<div class='txt'>
+<div><b>#28</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000004.jpg</code></div>
+<p class='ref'><b>参考：</b>Thick oily roasted AEbleflaesk with brown pieces of charred onions served over rye bread.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a large piece of unagi on a black plate with a piece of red pepper on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of brown ikan goreng made with fried fish and parsley</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000011.jpg' alt='images/test/unlabeled/000011.jpg'></div>
+<div class='txt'>
+<div><b>#29</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000011.jpg</code></div>
+<p class='ref'><b>参考：</b>Two pieces of boiled abalone slices on sushi rice placed on the top of sue cotyledons in a shell of an abalone.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a white plate of fish made with a mixture of fish and fish and served with a few slices of pickled onions</p>
+<p class='vt'><b>ViT+Transformer：</b>a bowl of rice pudding topped with cooked meat and green onions and a few slices of lemon</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000016.jpg' alt='images/test/unlabeled/000016.jpg'></div>
+<div class='txt'>
+<div><b>#30</b><span class='badge'>烹饪方式错误 (cooking_method_error)</span> <code>images/test/unlabeled/000016.jpg</code></div>
+<p class='ref'><b>参考：</b>Three pieces of braised abalones with tender texture and the sauce over them together with broccoli next to them</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of fried chicken with a piece of white cream and a few slices of bread on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of juicy steamed clams with broccoli and chili oil</p>
+<p class='sug'>建议类别：烹饪方式错误 (cooking_method_error)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000579.jpg' alt='images/test/unlabeled/000579.jpg'></div>
+<div class='txt'>
+<div><b>#31</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000579.jpg</code></div>
+<p class='ref'><b>参考：</b>rice adding bistek full of thin fried beef and onion rings on a square plate.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of bistek with some beef slices and some green onion rings on the top of the plate</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of bistek with onions onions and shredded onions</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000131.jpg' alt='images/test/unlabeled/000131.jpg'></div>
+<div class='txt'>
+<div><b>#32</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000131.jpg</code></div>
+<p class='ref'><b>参考：</b>Apple crisps covered with flour baked into brown and placed on a white round plate.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a white plate of golden apple sauce with a thick and white sauce on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of jambalaya made of rice shrimps and potatoes slices and a spoon placed on a white round plate</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000000.jpg' alt='images/test/unlabeled/000000.jpg'></div>
+<div class='txt'>
+<div><b>#33</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000000.jpg</code></div>
+<p class='ref'><b>参考：</b>Baked thin AEbleflaesk slices with brown dried surface alternate with yellow apple slices.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of aebleflaesk with a lot of pork belly and yellow apple slices</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of aebleflaesk with red thin slices of brown pork belly and a piece of brown bread</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000560.jpg' alt='images/test/unlabeled/000560.jpg'></div>
+<div class='txt'>
+<div><b>#34</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000560.jpg</code></div>
+<p class='ref'><b>参考：</b>a pot of biryani full of rice mixed with roasted pork with golden skin.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a pot of biryani with chopped green onion and coriander</p>
+<p class='vt'><b>ViT+Transformer：</b>biryani with parsley leaves and chopped red pepper on a large plate</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000345.jpg' alt='images/test/unlabeled/000345.jpg'></div>
+<div class='txt'>
+<div><b>#35</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000345.jpg</code></div>
+<p class='ref'><b>参考：</b>Light toasted bacon sandwiches with crispy bacon and fried eggs.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a sandwich with a layer of bacon and cheese slices and a layer of cheese on the top</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of golden sausage sandwich prepared using bread and meat</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000014.jpg' alt='images/test/unlabeled/000014.jpg'></div>
+<div class='txt'>
+<div><b>#36</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000014.jpg</code></div>
+<p class='ref'><b>参考：</b>Two piles of dried abalones with brown, hard and tough surface.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of poutine with some shrimps and white rice</p>
+<p class='vt'><b>ViT+Transformer：</b>some yellow konnyaku on a white plate with black edges and white</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000054.jpg' alt='images/test/unlabeled/000054.jpg'></div>
+<div class='txt'>
+<div><b>#37</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000054.jpg</code></div>
+<p class='ref'><b>参考：</b>Round thick almond biscuits baked brown with dried and cracked surfaces.</p>
+<p class='rn'><b>ResNet18+GRU：</b>some brown anzac biscuits with a crispy surface and some butter on the surface</p>
+<p class='vt'><b>ViT+Transformer：</b>three round pieces of brown anzac biscuits with oats on the surface</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000161.jpg' alt='images/test/unlabeled/000161.jpg'></div>
+<div class='txt'>
+<div><b>#38</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000161.jpg</code></div>
+<p class='ref'><b>参考：</b>Yellow apple sauce made with boiled blocks of apples and some cinnamon on its top.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a small bowl of yellow apple cobbler with a small piece of milk and a fork on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a small bowl of juicy and waxy spatzle with white cheese and parsley</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000185.jpg' alt='images/test/unlabeled/000185.jpg'></div>
+<div class='txt'>
+<div><b>#39</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000185.jpg</code></div>
+<p class='ref'><b>参考：</b>A piece of fluffy apple sauce cake topped with whipped cream and a slice of dried apple</p>
+<p class='rn'><b>ResNet18+GRU：</b>a piece of pumpkin cake with a layer of cream on the top and a piece of cream on the top</p>
+<p class='vt'><b>ViT+Transformer：</b>a piece of pumpkin bread with a thick texture made of some cream and some walnuts placed on a square white plate</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000299.jpg' alt='images/test/unlabeled/000299.jpg'></div>
+<div class='txt'>
+<div><b>#40</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000299.jpg</code></div>
+<p class='ref'><b>参考：</b>deep-fried ayam goreng with crispy skin accompanied with tomato slices, cucumbers and red chili sauce</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of fried chicken chicken with a crispy surface and a fork</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of ayam goreng with golden crispy skin served with cherry tomatoes and cucumbers</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000306.jpg' alt='images/test/unlabeled/000306.jpg'></div>
+<div class='txt'>
+<div><b>#41</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000306.jpg</code></div>
+<p class='ref'><b>参考：</b>Deep fried Ayam goreng with golden crispy outside, served with crispy granules.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of ayam bakar with a piece of lemon and a piece of lemon on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of rendang made with mutton served with green spices and tomatoes slices strips slices slices</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000348.jpg' alt='images/test/unlabeled/000348.jpg'></div>
+<div class='txt'>
+<div><b>#42</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000348.jpg</code></div>
+<p class='ref'><b>参考：</b>Two toasted bacon sandwiches with crispy outside and juicy fillings.</p>
+<p class='rn'><b>ResNet18+GRU：</b>two sandwiches with bacon slices and cheese on a white plate with a layer of cheese and cheese</p>
+<p class='vt'><b>ViT+Transformer：</b>a sandwich with two slices of toast and a layer of bacon between them on a wooden board slices slices and</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000360.jpg' alt='images/test/unlabeled/000360.jpg'></div>
+<div class='txt'>
+<div><b>#43</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000360.jpg</code></div>
+<p class='ref'><b>参考：</b>brown baked beans cooked with sausages and meat in thick sauce</p>
+<p class='rn'><b>ResNet18+GRU：</b>a thick brown brown sauce with a thick texture and sprinkled with some parsley</p>
+<p class='vt'><b>ViT+Transformer：</b>a thick serve of refried beans cooked with soybeans in thick brown sauce and a sprinkling of sesame</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000367.jpg' alt='images/test/unlabeled/000367.jpg'></div>
+<div class='txt'>
+<div><b>#44</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000367.jpg</code></div>
+<p class='ref'><b>参考：</b>Tender baked beans with tomato sauce, accompanied with two slices of toast.</p>
+<p class='rn'><b>ResNet18+GRU：</b>two pieces of corn dogs with a golden texture and a golden brown sauce on a white plate and</p>
+<p class='vt'><b>ViT+Transformer：</b>a piece of golden toast with sliced plums on top and some beans next to it</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000381.jpg' alt='images/test/unlabeled/000381.jpg'></div>
+<div class='txt'>
+<div><b>#45</b><span class='badge'>食材漏述 (missing_ingredient)</span> <code>images/test/unlabeled/000381.jpg</code></div>
+<p class='ref'><b>参考：</b>a pile of pan-fried banana pancakes with fresh banana slices on a round plate</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of brown bread with a brown surface and white cream on the top and a fork on</p>
+<p class='vt'><b>ViT+Transformer：</b>a piece of cheese bun with two slices of bread on the surface and a slice of lemon on the side in the</p>
+<p class='sug'>建议类别：食材漏述 (missing_ingredient)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000368.jpg' alt='images/test/unlabeled/000368.jpg'></div>
+<div class='txt'>
+<div><b>#46</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000368.jpg</code></div>
+<p class='ref'><b>参考：</b>A white oven of baked beans with reddish brown color and moist texture.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a bowl of dark brown beans with a brown texture</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of dark red beans with a lot of meat sauce in it in a white round bowl</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000363.jpg' alt='images/test/unlabeled/000363.jpg'></div>
+<div class='txt'>
+<div><b>#47</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000363.jpg</code></div>
+<p class='ref'><b>参考：</b>dry black baked beans in a white ceramic bowl with a baguette nearby</p>
+<p class='rn'><b>ResNet18+GRU：</b>a bowl of brown natto with a lot of white beans on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a bowl of dark brown peanuts with a spoon in it and a silver spoon in the bowl</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000584.jpg' alt='images/test/unlabeled/000584.jpg'></div>
+<div class='txt'>
+<div><b>#48</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000584.jpg</code></div>
+<p class='ref'><b>参考：</b>Many small pieces of fried Bistek sprinkled with onion rings and fried tofu on a white plate with blue stripes.</p>
+<p class='rn'><b>ResNet18+GRU：</b>bistek with chopped spring onion rings and onion rings on top of a plate of rice</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of bistek with onion rings beef and onion rings</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000562.jpg' alt='images/test/unlabeled/000562.jpg'></div>
+<div class='txt'>
+<div><b>#49</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000562.jpg</code></div>
+<p class='ref'><b>参考：</b>biryani cooked with slender rice, diced potatoes, and boiled chicken flavored with bell peppers in a square bowl.</p>
+<p class='rn'><b>ResNet18+GRU：</b>biryani with a lot of chopped spring onion and a spoon in a bowl of chili sauce and green onions</p>
+<p class='vt'><b>ViT+Transformer：</b>a top view of biryani with chicken potatoes onions bell peppers and celery</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000636.jpg' alt='images/test/unlabeled/000636.jpg'></div>
+<div class='txt'>
+<div><b>#50</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000636.jpg</code></div>
+<p class='ref'><b>参考：</b>a freshly baked blueberry pie cut into pieces with blueberry jam dripping out from the crack of the surface.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a round round pie with a blackberry pie crust with a layer of blueberry pie</p>
+<p class='vt'><b>ViT+Transformer：</b>a whole apple pie cut into two pieces in the middle placed on a wooden board and</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000304.jpg' alt='images/test/unlabeled/000304.jpg'></div>
+<div class='txt'>
+<div><b>#51</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000304.jpg</code></div>
+<p class='ref'><b>参考：</b>Grilled Ayam goreng made out of chicken drumsticks, accompanying by fresh lettuce, served on a white plate.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of ayam ayam with a lot of green spices served with a bowl of sauce</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of ayam goreng with a small bowl of sauce some parsley leaves and a small dish of sauce pieces</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000305.jpg' alt='images/test/unlabeled/000305.jpg'></div>
+<div class='txt'>
+<div><b>#52</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000305.jpg</code></div>
+<p class='ref'><b>参考：</b>Golden and crispy fried Ayam goreng made with chicken cuts, garnished with red bell pepper slices.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of ikan goreng with red pepper and red pepper</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of ikan goreng made with red pepper slices tomatoes and lettuce slices and a small amount of chili and white</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000333.jpg' alt='images/test/unlabeled/000333.jpg'></div>
+<div class='txt'>
+<div><b>#53</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000333.jpg</code></div>
+<p class='ref'><b>参考：</b>two poached eggs circled with bacon slices and accompanied with baked toast</p>
+<p class='rn'><b>ResNet18+GRU：</b>two pieces of bread and a piece of bread on the surface and a piece of bread on the surface and a piece of bread on the side and some slices of bread on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>two slices of bacon and cheese sandwiches with a fork on the side and a knife and fork on the side and a glass of</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000103.jpg' alt='images/test/unlabeled/000103.jpg'></div>
+<div class='txt'>
+<div><b>#54</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000103.jpg</code></div>
+<p class='ref'><b>参考：</b>Glass noodles added in minced pork and boiled with soy sauce into brown, topped with chopped green onions.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of beef and green beans with a lot of green onions on top</p>
+<p class='vt'><b>ViT+Transformer：</b>with some green and red peppers on the surface a brown refried beans dish with some diced chicken and some minced garlic and some rice in a brown bowl</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000173.jpg' alt='images/test/unlabeled/000173.jpg'></div>
+<div class='txt'>
+<div><b>#55</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000173.jpg</code></div>
+<p class='ref'><b>参考：</b>A small piece of apple strudel with sugar on the yellow baked surface placed on a small white plate.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of french fries with a crispy surface and a fork on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of golden-colored cotoletta with a piece of meat on it and drizzled with brown sauce</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000237.jpg' alt='images/test/unlabeled/000237.jpg'></div>
+<div class='txt'>
+<div><b>#56</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000237.jpg</code></div>
+<p class='ref'><b>参考：</b>A slice of avocado bread with layers of smashed avocado, grilled meat and avocado slices.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a piece of salmon pie with a piece of lemon on the surface a piece of lemon pie on the side</p>
+<p class='vt'><b>ViT+Transformer：</b>a piece of avocado toast with sliced avocado and sliced avocados on top on a square plate</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000246.jpg' alt='images/test/unlabeled/000246.jpg'></div>
+<div class='txt'>
+<div><b>#57</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000246.jpg</code></div>
+<p class='ref'><b>参考：</b>Deep fried avocado fries wrapped with bread crumbles, served on a white plate.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a large piece of cotoletta with a golden surface and some chopped parsley on the surface a plate of yellow bread</p>
+<p class='vt'><b>ViT+Transformer：</b>a plate of cotoletta with a layer of meat and some vegetable salad and egg</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000284.jpg' alt='images/test/unlabeled/000284.jpg'></div>
+<div class='txt'>
+<div><b>#58</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000284.jpg</code></div>
+<p class='ref'><b>参考：</b>Deep grilled Ayam bakar with golden and dry outside, served on a white plate.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of lamb chops with a crispy skin served with a fork on the side with a fork on the side and a</p>
+<p class='vt'><b>ViT+Transformer：</b>a charred ayam bakar on a white plate lined with absorbent paper slices and there are some tomato slices on the side and a lot of</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000342.jpg' alt='images/test/unlabeled/000342.jpg'></div>
+<div class='txt'>
+<div><b>#59</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000342.jpg</code></div>
+<p class='ref'><b>参考：</b>finely baked bacon sandwich filled with bacon slices and fried eggs layer-by-layer on a plate</p>
+<p class='rn'><b>ResNet18+GRU：</b>a piece of apple strudel with a crispy crust and some apple slices</p>
+<p class='vt'><b>ViT+Transformer：</b>a whole piece of apple strudel with thick layers of apple pulp pieces and thick jam</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+<div class='case'>
+<div class='img'><img loading='lazy' src='../figures/annotation/images__test__unlabeled__000344.jpg' alt='images/test/unlabeled/000344.jpg'></div>
+<div class='txt'>
+<div><b>#60</b><span class='badge'>无依据添加 (unsupported_addition)</span> <code>images/test/unlabeled/000344.jpg</code></div>
+<p class='ref'><b>参考：</b>A bacon sandwich made with white bread bun, scrambled eggs, and fried bacon.</p>
+<p class='rn'><b>ResNet18+GRU：</b>a plate of cheese sandwich with a layer of cheese and cheese on top</p>
+<p class='vt'><b>ViT+Transformer：</b>a sandwich with two pieces of bacon and cheese on the top and some ketchup on the side</p>
+<p class='sug'>建议类别：无依据添加 (unsupported_addition)</p>
+</div></div>
+</body></html>

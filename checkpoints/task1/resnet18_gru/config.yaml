@@ -1,0 +1,41 @@
+experiment: task1_resnet18_gru
+seed: 42
+deterministic: false
+data:
+  manifest: data/processed/food500cap_clean.jsonl
+  train_ids: data/manifests/food500cap_train_ids.txt
+  val_ids: data/manifests/food500cap_val_ids.txt
+  test_ids: data/manifests/food500cap_test_ids.txt
+  vocab: data/vocab/shared_vocab_5000.json
+  image_root: data/raw/food500cap
+  image_size: 224
+  max_len: 40
+  num_workers: 8
+  augment: true
+model:
+  name: resnet18_gru
+  pretrained: true
+  pretrained_path: null
+  freeze_encoder_epochs: 2
+  unfreeze_mode: last_block
+  embed_dim: 256
+  hidden_dim: 512
+  dropout: 0.2
+train:
+  batch_size: 32
+  grad_accum_steps: 1
+  epochs: 30
+  lr: 0.0001
+  weight_decay: 0.01
+  warmup_epochs: 2
+  grad_clip: 5.0
+  label_smoothing: 0.0
+  amp: true
+  eval_every: 1
+  monitor: cider_d
+  monitor_mode: max
+  patience: 6
+  save_dir: checkpoints/task1/resnet18_gru
+  log_dir: logs/task1
+eval:
+  protocol: configs/eval_protocol.yaml

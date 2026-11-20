@@ -1,0 +1,43 @@
+experiment: task1_vit_transformer
+seed: 42
+deterministic: false
+data:
+  manifest: data/processed/food500cap_clean.jsonl
+  train_ids: data/manifests/food500cap_train_ids.txt
+  val_ids: data/manifests/food500cap_val_ids.txt
+  test_ids: data/manifests/food500cap_test_ids.txt
+  vocab: data/vocab/shared_vocab_5000.json
+  image_root: data/raw/food500cap
+  image_size: 224
+  max_len: 40
+  num_workers: 8
+  augment: true
+model:
+  name: vit_transformer
+  pretrained: true
+  pretrained_path: null
+  freeze_encoder_epochs: 2
+  unfreeze_mode: last_block
+  d_model: 512
+  nhead: 8
+  num_decoder_layers: 4
+  dim_feedforward: 2048
+  dropout: 0.1
+train:
+  batch_size: 32
+  grad_accum_steps: 1
+  epochs: 30
+  lr: 0.0001
+  weight_decay: 0.01
+  warmup_epochs: 2
+  grad_clip: 5.0
+  label_smoothing: 0.0
+  amp: true
+  eval_every: 1
+  monitor: cider_d
+  monitor_mode: max
+  patience: 6
+  save_dir: checkpoints/task1/vit_transformer
+  log_dir: logs/task1
+eval:
+  protocol: configs/eval_protocol.yaml

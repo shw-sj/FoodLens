@@ -1,0 +1,21 @@
+# Task 1 / task 3 shared caption stack.
+# Install PyTorch with the CUDA build that matches the server first, e.g.
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+# then:
+#   pip install -r environment/requirements-task1.txt
+#
+# Tested locally with Python 3.13 + torch 2.11 CPU; on the server any
+# torch>=2.1 / torchvision>=0.16 pair with CUDA is expected to work.
+torch>=2.1
+torchvision>=0.16
+numpy>=1.23
+Pillow>=9.5
+PyYAML>=6.0
+tqdm>=4.65
+
+# Optional: only needed for scripts/data_load.py (HuggingFace download).
+# Skip this line if you already have the course data locally.
+datasets>=2.14
+
+# The COCO metrics are implemented in src/common/metrics.py and verified
+# against pycocoevalcap, so pycocoevalcap / Java are not required.

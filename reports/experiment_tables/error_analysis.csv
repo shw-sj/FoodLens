@@ -1,0 +1,9 @@
+﻿model,category,en_key,count,pct
+ResNet18+GRU,食材误识别,ingredient_misidentification,4802,97.25
+ResNet18+GRU,烹饪方式错误,cooking_method_error,1516,30.70
+ResNet18+GRU,食材漏述,missing_ingredient,4934,99.92
+ResNet18+GRU,无依据添加,unsupported_addition,4805,97.31
+ViT+Transformer,食材误识别,ingredient_misidentification,4908,99.39
+ViT+Transformer,烹饪方式错误,cooking_method_error,1661,33.64
+ViT+Transformer,食材漏述,missing_ingredient,4927,99.78
+ViT+Transformer,无依据添加,unsupported_addition,4919,99.62
